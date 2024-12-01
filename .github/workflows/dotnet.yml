@@ -1,0 +1,33 @@
+name: Test DotNet action - display the dotnet version
+on: 
+  pull_request:
+    branches: develop
+
+jobs:
+  run-on-ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Setup .NET 8.x on Ubuntu
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+      - name: Display dotnet version
+        run: dotnet --version
+  run-on-windows:
+    runs-on: windows-latest
+    steps:
+      - name: Setup .NET 8.x on windows
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+      - name: Display dotnet version
+        run: dotnet --version
+  run-on-macOs:
+    runs-on: macos-latest
+    steps:
+      - name: Setup .NET 8.x on macOs
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+      - name: Display dotnet version
+        run: dotnet --version
